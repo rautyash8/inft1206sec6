@@ -137,7 +137,7 @@
         </a>
         <a href="https://addons.mozilla.org/">
           <img
-          srcset="firefox-addons-120.jpg 120w, firefox-addons-400.jpg 400w"
+            srcset="firefox-addons-120.jpg 120w, firefox-addons-400.jpg 400w"
             sizes="(max-width: 500px) 120px, 400px"
             src="./firefox-addons-400.jpg" 
             alt="firefox add-ons">
@@ -149,11 +149,16 @@
         </a>
         <div class="clearfix"></div>
       </div>
-
       <div class="red-panda">
-        <!-- insert picture element -->
+        <picture>
+          <source
+            media="(max-width:600px)" 
+            srcset="red-panda-600.jpg">
+          <img 
+            src="red-panda-1200.jpg"
+            alt="red-panda">
+        </picture>
       </div>
-
     </main>
   </body>
 </html>
