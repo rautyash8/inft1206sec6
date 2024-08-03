@@ -15,3 +15,23 @@ function initializeImageFilenameArray(length) {
 }
 
 const imageSize = 5;
+/* Looping through images */
+
+function initializeThumbBar() {
+    initializeImageFilenameArray(imageSize);
+    for (const imageFilename of imageFilenames) {
+        const imageRelativePathPattern = `images/${imageFilename}`;
+        const newImage = document.createElement('img');
+        newImage.setAttribute('src', imageRelativePathPattern);
+        newImage.setAttribute('alt', imageFilename);
+        thumbBar.appendChild(newImage);
+    }
+}
+
+initializeThumbBar();
+
+thumbBar.addEventListener('mouseover', event => {
+    displayedImage.setAttribute('src', event.target.getAttribute('src'));
+    displayedImage.setAttribute('alt', event.target.getAttribute('alt'));
+});
+
