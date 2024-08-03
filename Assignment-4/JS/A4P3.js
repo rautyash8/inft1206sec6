@@ -18,3 +18,79 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${ random(0, 255) },${ random(0, 255) },${ random(0, 255) })`;
 }
+
+
+// Object to represent a ball
+class Ball {
+
+    x;
+    y;
+    velX;
+    velY;
+    color;
+    size;
+
+    constructor(x, y, velX, velY, color, size) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.color = color;
+        this.size = size;
+    }
+
+    // Drawing the ball
+    draw() {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    // Moving the ball
+    update() {
+        if ((this.x + this.size) >= width) {
+            this.velX = -(this.velX);
+        }
+
+        if ((this.x - this.size) <= 0) {
+            this.velX = -(this.velX);
+        }
+
+        
+        if ((this.y + this.size) >= height) {
+            this.velY = -(this.velY);
+        }
+
+        if ((this.y - this.size) <= 0) {
+            this.velY = -(this.velY);
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+    }
+
+    // Collision detection
+    collisionDetect() {
+        for (const ball of balls) {
+            // Check to make sure that current ball being looped through is not
+            // the same ball as the one being checked
+            // Code only runs if not the same
+            if (!(this === ball)) {
+                // Distance (hypotenuse of a right triangle) is equal to the
+                // square root of the squared x and y distances (legs) added
+                // togther; Pythagorean Theorem c = √(x^2 + y^2)
+                const dx = this.x - ball.x;
+                const dy = this.y - ball.y;
+                const distance = Math.sqrt(dx ** 2  + dy ** 2);
+
+                // If balls collide (whether any of the two circles'
+                // areas overlap), assign both the same new random color
+                if (distance < this.size + ball.size) {
+                    ball.color = this.color = randomRGB();
+                }
+            }
+        }
+    }
+
+}
