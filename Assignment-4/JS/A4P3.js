@@ -127,3 +127,7 @@ function loop() {
 
     requestAnimationFrame(loop);
 }
+
+
+// Start the animation
+loop();
