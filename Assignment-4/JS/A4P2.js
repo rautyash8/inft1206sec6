@@ -35,3 +35,21 @@ thumbBar.addEventListener('mouseover', event => {
     displayedImage.setAttribute('alt', event.target.getAttribute('alt'));
 });
 
+function change(bgColor, className, buttonContent) {
+    overlay.style.backgroundColor = bgColor;
+    btn.setAttribute('class', className);
+    btn.textContent = buttonContent;
+}
+
+function switchColorStyle(event) {
+    switch (event.target.getAttribute('class')) {
+        case 'dark':
+            change('rgba(0,0,0,0.5)', 'light', 'Lighten');
+            break;
+        default:
+            change('rgba(0,0,0,0)', 'dark', 'Darken');
+    }
+}
+
+/* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', switchColorStyle)
