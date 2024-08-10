@@ -15,7 +15,7 @@ html, body {
     min-width: 1024px;
     margin: 0 auto;
   }
-  
+
   /* || typography */
   
   font[size="7"], font[size="6"], font[size="5"] {
@@ -47,4 +47,72 @@ html, body {
   p, li, table {
     font-size: 1.6rem;
     line-height: 1.5;
+  }
+
+  /* || header layout */
+  
+  nav, article, footer, .secondary {
+    background-color: #a5ffff;
+  }
+  
+  article, footer, .secondary {
+    padding: 10px 30px;
+  }
+  
+  article {
+    margin-right: 10px;
+  }
+  
+  nav {
+    height: 50px;
+    background-color: ff80ff;
+    display: flex;
+    padding: 1% 0;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+  }
+  
+  nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+  }
+  
+  nav a {
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+  }
+  
+  nav .search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2em;
+  }
+  
+  .search input {
+    font-size: 1.6rem;
+    height: 32px;
+  }
+  
+  .search input[type="search"] {
+    flex: 3;
+  }
+  
+  .search input[type="submit"] {
+    flex: 1;
+    margin-left: 1rem;
+    background: #333;
+    border: 0;
+    color: white;
   }
