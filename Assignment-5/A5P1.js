@@ -38,4 +38,10 @@ function submitComment() {
     namePara.textContent = nameValue;
     commentPara.textContent = commentValue;
 
-    
+    list.appendChild(listItem);
+    listItem.appendChild(namePara);
+    listItem.appendChild(commentPara);
+  
+    nameField.value = '';
+    commentField.value = '';
+}
