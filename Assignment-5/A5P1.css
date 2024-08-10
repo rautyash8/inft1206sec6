@@ -134,3 +134,27 @@ html, body {
   footer {
     margin-top: 10px;
   }
+
+  /* Table styling */
+  
+  table {
+    width: 100%;
+    background-color: #dde;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  th[scope="col"] {
+    border-bottom: 1px solid black;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #def;
+  }
