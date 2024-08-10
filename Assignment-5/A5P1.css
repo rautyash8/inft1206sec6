@@ -1,0 +1,17 @@
+/* || General setup */
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 10px;
+    background-color: #dde;
+  }
+  
+  body {
+    width: 80%;
+    min-width: 1024px;
+    margin: 0 auto;
+  }
