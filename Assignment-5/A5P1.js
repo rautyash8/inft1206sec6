@@ -27,3 +27,15 @@ form.onsubmit = function(e) {
   e.preventDefault();
   submitComment();
 };
+
+function submitComment() {
+    var listItem = document.createElement('li');
+    var namePara = document.createElement('p');
+    var commentPara = document.createElement('p');
+    var nameValue = nameField.value;
+    var commentValue = commentField.value;
+  
+    namePara.textContent = nameValue;
+    commentPara.textContent = commentValue;
+
+    
