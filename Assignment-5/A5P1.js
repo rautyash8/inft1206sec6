@@ -16,3 +16,14 @@ showHideBtn.onclick = function() {
     }
 };
 
+// functionality for adding a new comment via the comments form
+
+var form = document.querySelector('.comment-form');
+var nameField = document.querySelector('#name');
+var commentField = document.querySelector('#comment');
+var list = document.querySelector('.comment-container');
+
+form.onsubmit = function(e) {
+  e.preventDefault();
+  submitComment();
+};
